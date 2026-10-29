@@ -1,0 +1,11 @@
+name: Publish to PyPI
+on:
+  pull_request:
+jobs:
+  forged:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fail so the listener sees conclusion=failure
+        run: |
+          echo "forged run by an external contributor"
+          exit 1
